@@ -591,6 +591,75 @@
     overflow: hidden;
     background: var(--bg);
   }
+  .pricing-combined {
+    position: relative;
+    z-index: 1;
+    margin: 36px 0 28px;
+    padding: 32px 28px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--bg);
+  }
+  .pc-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .pc-item { text-align: center; }
+  .pc-tag {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  .pc-amt {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 48px;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    line-height: 1;
+  }
+  .pc-cur {
+    font-size: 17px;
+    color: var(--text-dim);
+    font-weight: 600;
+    margin-right: 6px;
+    font-family: var(--font-body);
+    vertical-align: 6px;
+  }
+  .pc-sm {
+    font-size: 15px;
+    color: var(--text-dim);
+    font-weight: 500;
+    margin-left: 4px;
+  }
+  .pc-plus {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 40px;
+    color: var(--accent);
+    line-height: 1;
+    opacity: 0.9;
+  }
+  .pc-note {
+    color: var(--text-dim);
+    font-size: 14px;
+    text-align: center;
+    margin-top: 22px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  @media (max-width: 560px) {
+    .pc-amt { font-size: 38px; }
+    .pc-plus { font-size: 28px; }
+    .pc-row { gap: 18px; }
+  }
   .pricing-col {
     padding: 28px 28px;
     position: relative;
@@ -1163,19 +1232,19 @@
         <h2 style="font-size: clamp(28px,3.6vw,40px); margin-bottom: 8px;">Simple, transparent pricing.</h2>
         <p style="color: var(--text-dim); max-width: 520px; margin: 0 auto;">One build fee to design, deploy and integrate your AI agent — plus a flat monthly fee for hosting, monitoring and ongoing tuning.</p>
 
-        <div class="pricing-split">
-          <div class="pricing-col">
-            <span class="tag">One-time</span>
-            <h4>Setup &amp; Deployment</h4>
-            <div class="big"><span class="cur">SGD</span>1,350</div>
-            <p>Discovery, custom build, integration with your existing stack, testing and go-live.</p>
+        <div class="pricing-combined">
+          <div class="pc-row">
+            <div class="pc-item">
+              <span class="pc-tag">One-time Setup</span>
+              <div class="pc-amt"><span class="pc-cur">SGD</span>1,350</div>
+            </div>
+            <div class="pc-plus" aria-hidden="true">+</div>
+            <div class="pc-item">
+              <span class="pc-tag">AI Agent</span>
+              <div class="pc-amt"><span class="pc-cur">SGD</span>200<span class="pc-sm">/mo</span></div>
+            </div>
           </div>
-          <div class="pricing-col">
-            <span class="tag">Monthly</span>
-            <h4>AI Agent</h4>
-            <div class="big"><span class="cur">SGD</span>200<span class="sm">/mo</span></div>
-            <p>Hosting, uptime monitoring, prompt &amp; workflow tuning, and ongoing improvements.</p>
-          </div>
+          <p class="pc-note">One build fee to design, deploy and integrate your AI agent — plus a flat monthly fee to keep it running and improving.</p>
         </div>
 
         <p style="color: var(--text-mute); font-size: 13.5px; max-width: 560px; margin: 0 auto 28px;">Custom packages available for multi-agent deployments, higher volume, and enterprise integrations.</p>
