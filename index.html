@@ -1092,150 +1092,30 @@
     box-shadow: 0 6px 14px -4px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
   }
 
-  /* ---------- FULL 3D LAYER ---------- */
-  section { transform-style: preserve-3d; }
-
-  /* Section headings: extruded text */
-  .section-head h2, .footer-cta h2 {
-    text-shadow:
-      0 1px 0 rgba(0,212,170,0.35),
-      0 2px 0 rgba(0,212,170,0.25),
-      0 3px 0 rgba(0,212,170,0.18),
-      0 4px 0 rgba(0,212,170,0.12),
-      0 10px 24px rgba(0,0,0,0.55);
-  }
+  /* ---------- 3D ACCENTS (clean) ---------- */
   .hero h1 {
     text-shadow:
-      0 1px 0 rgba(0,212,170,0.4),
-      0 2px 0 rgba(0,212,170,0.3),
-      0 3px 0 rgba(0,212,170,0.22),
-      0 4px 0 rgba(0,212,170,0.15),
-      0 6px 0 rgba(0,212,170,0.08),
-      0 14px 36px rgba(0,0,0,0.6);
+      0 2px 0 rgba(0,212,170,0.25),
+      0 4px 0 rgba(0,212,170,0.12),
+      0 12px 28px rgba(0,0,0,0.55);
   }
-
-  /* Stepped block shadow on all card types */
-  .service-card, .pain-card, .why-card, .step, .test-card, .faq-item, .pricing-card {
-    box-shadow:
-      3px 3px 0 -1px var(--border),
-      6px 6px 0 -1px var(--border),
-      9px 9px 0 -1px var(--border),
-      0 24px 40px -16px rgba(0,0,0,0.55);
+  .section-head h2 {
+    text-shadow: 0 2px 0 rgba(0,212,170,0.18), 0 10px 24px rgba(0,0,0,0.4);
   }
-  .service-card:hover, .pain-card:hover, .why-card:hover, .step:hover, .test-card:hover, .faq-item:hover, .pricing-card:hover {
-    box-shadow:
-      4px 4px 0 -1px var(--accent),
-      8px 8px 0 -1px rgba(0,212,170,0.5),
-      12px 12px 0 -1px rgba(0,212,170,0.3),
-      0 30px 60px -18px rgba(0,0,0,0.6),
-      0 0 40px rgba(0,212,170,0.15);
-  }
-
-  /* Floating 3D wireframe cubes */
-  .cube {
-    position: absolute;
-    width: var(--sz, 80px);
-    height: var(--sz, 80px);
-    transform-style: preserve-3d;
-    animation: cubeRot var(--spd, 22s) linear infinite;
-    pointer-events: none;
-    opacity: 0.5;
-    z-index: 0;
-  }
-  .cube .face {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: 1.5px solid var(--accent);
-    background: linear-gradient(135deg, rgba(0,212,170,0.08), rgba(0,212,170,0.02));
-    box-shadow: inset 0 0 24px rgba(0,212,170,0.15);
-  }
-  .cube .f  { transform: translateZ(calc(var(--sz, 80px) / 2)); }
-  .cube .bk { transform: rotateY(180deg) translateZ(calc(var(--sz, 80px) / 2)); }
-  .cube .t  { transform: rotateX(90deg)  translateZ(calc(var(--sz, 80px) / 2)); }
-  .cube .b  { transform: rotateX(-90deg) translateZ(calc(var(--sz, 80px) / 2)); }
-  .cube .l  { transform: rotateY(-90deg) translateZ(calc(var(--sz, 80px) / 2)); }
-  .cube .r  { transform: rotateY(90deg)  translateZ(calc(var(--sz, 80px) / 2)); }
-  @keyframes cubeRot {
-    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    to   { transform: rotateX(360deg) rotateY(360deg) rotateZ(180deg); }
-  }
-
-  /* Floating 3D orbs */
-  .orb {
-    position: absolute;
-    width: var(--sz, 180px);
-    height: var(--sz, 180px);
-    border-radius: 50%;
-    background: radial-gradient(circle at 35% 30%, var(--accent), transparent 65%);
-    opacity: 0.15;
-    filter: blur(20px);
-    pointer-events: none;
-    animation: orbFloat var(--spd, 10s) ease-in-out infinite;
-    z-index: 0;
-  }
-  @keyframes orbFloat {
-    0%,100% { transform: translate3d(0,0,0) scale(1); }
-    50%     { transform: translate3d(20px,-30px,40px) scale(1.1); }
-  }
-
-  section > .container { position: relative; z-index: 2; }
-
-  /* Rotating 3D service icons on card hover */
-  .service-icon, .why-icon {
-    transition: transform 0.6s cubic-bezier(.2,.9,.3,1);
-    transform-style: preserve-3d;
-  }
-  .service-card:hover .service-icon,
-  .why-card:hover .why-icon {
-    transform: translateZ(45px) rotateY(360deg);
-  }
-
-  /* Nav lifted */
-  .nav.scrolled {
-    box-shadow: 0 2px 0 var(--border), 0 10px 30px -10px rgba(0,0,0,0.5);
-  }
-
-  /* Step num becomes a 3D block */
-  .step-num {
-    display: inline-block;
-    transform-style: preserve-3d;
-    animation: stepBob 4s ease-in-out infinite;
-  }
-  @keyframes stepBob {
-    0%,100% { transform: translateY(0) rotateX(0); }
-    50%     { transform: translateY(-6px) rotateX(8deg); }
-  }
-
-  /* Pricing numbers 3D */
   .pc-amt {
-    text-shadow:
-      0 1px 0 rgba(0,212,170,0.4),
-      0 2px 0 rgba(0,212,170,0.3),
-      0 3px 0 rgba(0,212,170,0.22),
-      0 4px 0 rgba(0,212,170,0.15),
-      0 8px 20px rgba(0,0,0,0.5);
+    text-shadow: 0 2px 0 rgba(0,212,170,0.2), 0 10px 20px rgba(0,0,0,0.4);
   }
-
-  /* Avatars with 3D */
   .avatar {
-    box-shadow:
-      0 2px 0 #00947A,
-      0 4px 0 #007A64,
-      0 6px 14px rgba(0,0,0,0.4);
-    animation: avFloat 5s ease-in-out infinite;
+    box-shadow: 0 2px 0 #00947A, 0 4px 0 #007A64, 0 6px 14px rgba(0,0,0,0.4);
   }
-  @keyframes avFloat {
-    0%,100% { transform: translateY(0) rotateY(0); }
-    50%     { transform: translateY(-4px) rotateY(20deg); }
+  .nav.scrolled {
+    box-shadow: 0 1px 0 var(--border), 0 10px 24px -12px rgba(0,0,0,0.5);
   }
-
-  /* Tools chips get mini 3D */
   .tool {
     box-shadow: 0 2px 0 var(--border-strong);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.2s, color 0.2s;
   }
-  .tool:hover { transform: translateY(-2px); }
+  .tool:hover { transform: translateY(-1px); color: var(--accent); border-color: var(--accent); }
 
   /* RESPONSIVE */
   @media (max-width: 980px) {
@@ -1250,16 +1130,7 @@
     .float-wa { display: grid; }
     .hero { padding: 140px 0 90px; }
     .hero-scene { display: none; }
-    .cube, .orb { display: none; }
-    .section-head h2, .hero h1, .footer-cta h2 {
-      text-shadow:
-        0 1px 0 rgba(0,212,170,0.3),
-        0 2px 0 rgba(0,212,170,0.2),
-        0 4px 12px rgba(0,0,0,0.5);
-    }
-    .service-card, .pain-card, .why-card, .step, .test-card, .faq-item, .pricing-card {
-      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
-    }
+    .hero h1 { text-shadow: 0 2px 0 rgba(0,212,170,0.2), 0 4px 12px rgba(0,0,0,0.5); }
     .pricing-card { padding: 40px 24px; }
     .faq-q { padding: 18px 20px; font-size: 15px; }
     .faq-a-inner { padding: 0 20px 20px; }
@@ -1749,8 +1620,8 @@
     });
   });
 
-  // 3D mouse-tilt on cards (stronger)
-  const applyTiltTo = '.service-card, .why-card, .pain-card, .step, .test-card, .pricing-card';
+  // 3D mouse-tilt on cards (moderate, safe)
+  const applyTiltTo = '.service-card, .why-card, .pain-card, .step, .test-card';
   document.querySelectorAll(applyTiltTo).forEach(el => el.classList.add('tilt'));
   const supportsHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
   if (supportsHover) {
@@ -1761,82 +1632,11 @@
         if (!rect) rect = el.getBoundingClientRect();
         const x = (e.clientX - rect.left) / rect.width - 0.5;
         const y = (e.clientY - rect.top) / rect.height - 0.5;
-        const rx = (-y * 14).toFixed(2);
-        const ry = (x * 16).toFixed(2);
-        el.style.transform = `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(22px)`;
+        const rx = (-y * 6).toFixed(2);
+        const ry = (x * 8).toFixed(2);
+        el.style.transform = `perspective(1000px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(12px)`;
       });
       el.addEventListener('mouseleave', () => { el.style.transform = ''; rect = null; });
-    });
-  }
-
-  // Inject floating 3D cubes & orbs into sections
-  const makeCube = () => {
-    const c = document.createElement('div');
-    c.className = 'cube';
-    c.innerHTML = '<div class="face f"></div><div class="face bk"></div><div class="face t"></div><div class="face b"></div><div class="face l"></div><div class="face r"></div>';
-    return c;
-  };
-  const decor = [
-    { sel: '#pain',         type: 'cube', pos: { top: '12%', left: '4%' },   sz: 70,  spd: 24 },
-    { sel: '#pain',         type: 'orb',  pos: { bottom: '10%', right: '6%' },sz: 240, spd: 11 },
-    { sel: '#services',     type: 'cube', pos: { top: '8%', right: '3%' },   sz: 110, spd: 28 },
-    { sel: '#services',     type: 'cube', pos: { bottom: '10%', left: '2%' },sz: 60,  spd: 18 },
-    { sel: '#services',     type: 'orb',  pos: { top: '40%', left: '-6%' },  sz: 320, spd: 13 },
-    { sel: '#how',          type: 'cube', pos: { top: '14%', right: '5%' },  sz: 90,  spd: 26 },
-    { sel: '#how',          type: 'orb',  pos: { bottom: '15%', left: '-4%' },sz: 260, spd: 14 },
-    { sel: '#why',          type: 'cube', pos: { top: '10%', left: '3%' },   sz: 80,  spd: 22 },
-    { sel: '#why',          type: 'cube', pos: { bottom: '12%', right: '4%' },sz: 55, spd: 20 },
-    { sel: '#testimonials', type: 'cube', pos: { top: '15%', right: '4%' },  sz: 70,  spd: 25 },
-    { sel: '#testimonials', type: 'orb',  pos: { bottom: '8%', left: '-5%' }, sz: 280, spd: 12 },
-    { sel: '#pricing',      type: 'cube', pos: { top: '12%', left: '5%' },   sz: 65,  spd: 21 },
-    { sel: '#pricing',      type: 'cube', pos: { top: '18%', right: '6%' },  sz: 85,  spd: 27 },
-    { sel: '#faq',          type: 'cube', pos: { bottom: '10%', right: '3%' },sz: 95, spd: 23 },
-    { sel: '#faq',          type: 'orb',  pos: { top: '10%', right: '-6%' }, sz: 300, spd: 15 },
-    { sel: '#contact',      type: 'cube', pos: { top: '18%', left: '6%' },   sz: 75,  spd: 24 },
-    { sel: '#contact',      type: 'cube', pos: { top: '22%', right: '6%' },  sz: 60,  spd: 19 },
-  ];
-  decor.forEach(d => {
-    const sec = document.querySelector(d.sel);
-    if (!sec) return;
-    const el = d.type === 'cube' ? makeCube() : (() => { const o = document.createElement('div'); o.className = 'orb'; return o; })();
-    Object.assign(el.style, d.pos);
-    el.style.setProperty('--sz', d.sz + 'px');
-    el.style.setProperty('--spd', d.spd + 's');
-    el.style.animationDelay = (-Math.random() * d.spd) + 's';
-    sec.style.position = sec.style.position || 'relative';
-    sec.appendChild(el);
-  });
-
-  // Scroll parallax on cubes/orbs
-  let ticking = false;
-  const parallaxEls = () => document.querySelectorAll('.cube, .orb');
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        const y = window.scrollY;
-        parallaxEls().forEach((el, i) => {
-          const factor = (i % 3) === 0 ? 0.15 : (i % 3 === 1 ? -0.1 : 0.08);
-          el.style.marginTop = (y * factor) + 'px';
-        });
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // Parallax on hero scene cards
-  const scene = document.querySelector('.hero-scene');
-  if (scene && supportsHover) {
-    const cards = scene.querySelectorAll('.scene-card');
-    document.addEventListener('mousemove', (e) => {
-      const x = (e.clientX / window.innerWidth - 0.5);
-      const y = (e.clientY / window.innerHeight - 0.5);
-      cards.forEach((c, i) => {
-        const depth = (i + 1) * 6;
-        c.style.setProperty('--mx', `${x * depth}px`);
-        c.style.setProperty('--my', `${y * depth}px`);
-      });
-      scene.style.transform = `rotateX(${-y * 3}deg) rotateY(${x * 4}deg)`;
     });
   }
 
